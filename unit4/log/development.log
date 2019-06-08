@@ -1,0 +1,920 @@
+  [1m[35m (2404.7ms)[0m  [1m[35mCREATE DATABASE "unit4_development" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35m (698.7ms)[0m  [1m[35mCREATE DATABASE "unit4_test" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+Started GET "/" for ::1 at 2019-06-08 01:42:38 -0700
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/emmyshaffer/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/railties-5.2.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/emmyshaffer/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/railties-5.2.3/lib/rails/templates/rails/welcome/index.html.erb (7.0ms)
+Completed 200 OK in 103ms (Views: 82.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/form" for ::1 at 2019-06-08 02:36:32 -0700
+Processing by FormController#index as HTML
+Completed 500 Internal Server Error in 146ms (ActiveRecord: 0.0ms)
+
+
+  
+PG::UndefinedTable (ERROR:  relation "form" does not exist
+LINE 1: SELECT * FROM form;
+                      ^
+):
+  
+app/models/form.rb:7:in `async_exec'
+app/models/form.rb:7:in `all'
+app/controllers/form_controller.rb:4:in `index'
+Started GET "/form" for ::1 at 2019-06-08 02:38:06 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/form"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/forms" for ::1 at 2019-06-08 02:38:19 -0700
+Processing by FormsController#index as HTML
+Completed 500 Internal Server Error in 67ms (ActiveRecord: 0.0ms)
+
+
+  
+PG::UndefinedTable (ERROR:  relation "form" does not exist
+LINE 1: SELECT * FROM form;
+                      ^
+):
+  
+app/models/form.rb:7:in `async_exec'
+app/models/form.rb:7:in `all'
+app/controllers/forms_controller.rb:4:in `index'
+Started GET "/forms" for ::1 at 2019-06-08 02:38:50 -0700
+Processing by FormsController#index as HTML
+Completed 200 OK in 58ms (Views: 18.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/forms/" for ::1 at 2019-06-08 02:43:01 -0700
+Processing by FormsController#index as */*
+  Parameters: {"task_item"=>"Learn how to integrate rails and react", "completed"=>true, "form"=>{"task_item"=>"Learn how to integrate rails and react", "completed"=>true}}
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/forms/" for ::1 at 2019-06-08 02:43:05 -0700
+Processing by FormsController#index as */*
+  Parameters: {"task_item"=>"Learn how to integrate rails and react", "completed"=>true, "form"=>{"task_item"=>"Learn how to integrate rails and react", "completed"=>true}}
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/forms/" for ::1 at 2019-06-08 02:45:25 -0700
+Error occurred while parsing request parameters.
+Contents:
+
+{
+  
+  
+        "date": 06052019,
+        "text": "this is text",
+        "image": "this is image",
+        "title": "this is title",
+        "author": "this is author"
+}
+
+
+
+  
+ActionDispatch::Http::Parameters::ParseError (767: unexpected token at '{
+  
+  
+        "date": 06052019,
+        "text": "this is text",
+        "image": "this is image",
+        "title": "this is title",
+        "author": "this is author"
+}
+
+
+'):
+  
+actionpack (5.2.3) lib/action_dispatch/http/parameters.rb:117:in `rescue in parse_formatted_parameters'
+actionpack (5.2.3) lib/action_dispatch/http/parameters.rb:111:in `parse_formatted_parameters'
+actionpack (5.2.3) lib/action_dispatch/http/request.rb:381:in `block in POST'
+rack (2.0.7) lib/rack/request.rb:59:in `fetch'
+rack (2.0.7) lib/rack/request.rb:59:in `fetch_header'
+actionpack (5.2.3) lib/action_dispatch/http/request.rb:380:in `POST'
+actionpack (5.2.3) lib/action_dispatch/http/parameters.rb:55:in `parameters'
+actionpack (5.2.3) lib/action_controller/metal/params_wrapper.rb:290:in `_wrapper_enabled?'
+actionpack (5.2.3) lib/action_controller/metal/params_wrapper.rb:244:in `process_action'
+activerecord (5.2.3) lib/active_record/railties/controller_runtime.rb:24:in `process_action'
+actionpack (5.2.3) lib/abstract_controller/base.rb:134:in `process'
+actionpack (5.2.3) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.3) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.0.7) lib/rack/etag.rb:25:in `call'
+rack (2.0.7) lib/rack/conditional_get.rb:38:in `call'
+rack (2.0.7) lib/rack/head.rb:12:in `call'
+activerecord (5.2.3) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.3) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started POST "/forms/" for ::1 at 2019-06-08 02:46:44 -0700
+Error occurred while parsing request parameters.
+Contents:
+
+{
+	    "date": 06052019,
+        "text": "this is text",
+        "image": "this is image",
+        "title": "this is title",
+        "author": "this is author"
+}
+
+
+
+  
+ActionDispatch::Http::Parameters::ParseError (767: unexpected token at '{
+	    "date": 06052019,
+        "text": "this is text",
+        "image": "this is image",
+        "title": "this is title",
+        "author": "this is author"
+}
+
+
+'):
+  
+actionpack (5.2.3) lib/action_dispatch/http/parameters.rb:117:in `rescue in parse_formatted_parameters'
+actionpack (5.2.3) lib/action_dispatch/http/parameters.rb:111:in `parse_formatted_parameters'
+actionpack (5.2.3) lib/action_dispatch/http/request.rb:381:in `block in POST'
+rack (2.0.7) lib/rack/request.rb:59:in `fetch'
+rack (2.0.7) lib/rack/request.rb:59:in `fetch_header'
+actionpack (5.2.3) lib/action_dispatch/http/request.rb:380:in `POST'
+actionpack (5.2.3) lib/action_dispatch/http/parameters.rb:55:in `parameters'
+actionpack (5.2.3) lib/action_controller/metal/params_wrapper.rb:290:in `_wrapper_enabled?'
+actionpack (5.2.3) lib/action_controller/metal/params_wrapper.rb:244:in `process_action'
+activerecord (5.2.3) lib/active_record/railties/controller_runtime.rb:24:in `process_action'
+actionpack (5.2.3) lib/abstract_controller/base.rb:134:in `process'
+actionpack (5.2.3) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.3) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.0.7) lib/rack/etag.rb:25:in `call'
+rack (2.0.7) lib/rack/conditional_get.rb:38:in `call'
+rack (2.0.7) lib/rack/head.rb:12:in `call'
+activerecord (5.2.3) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.3) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started POST "/forms/" for ::1 at 2019-06-08 02:57:01 -0700
+  
+ActionController::RoutingError (uninitialized constant FormController):
+  
+bootsnap (1.4.4) lib/bootsnap/load_path_cache/core_ext/active_support.rb:79:in `block in load_missing_constant'
+bootsnap (1.4.4) lib/bootsnap/load_path_cache/core_ext/active_support.rb:8:in `without_bootsnap_cache'
+bootsnap (1.4.4) lib/bootsnap/load_path_cache/core_ext/active_support.rb:79:in `rescue in load_missing_constant'
+bootsnap (1.4.4) lib/bootsnap/load_path_cache/core_ext/active_support.rb:58:in `load_missing_constant'
+activesupport (5.2.3) lib/active_support/inflector/methods.rb:283:in `const_get'
+activesupport (5.2.3) lib/active_support/inflector/methods.rb:283:in `block in constantize'
+activesupport (5.2.3) lib/active_support/inflector/methods.rb:281:in `each'
+activesupport (5.2.3) lib/active_support/inflector/methods.rb:281:in `inject'
+activesupport (5.2.3) lib/active_support/inflector/methods.rb:281:in `constantize'
+actionpack (5.2.3) lib/action_dispatch/http/request.rb:88:in `controller_class_for'
+actionpack (5.2.3) lib/action_dispatch/http/request.rb:81:in `controller_class'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:46:in `controller'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.0.7) lib/rack/etag.rb:25:in `call'
+rack (2.0.7) lib/rack/conditional_get.rb:38:in `call'
+rack (2.0.7) lib/rack/head.rb:12:in `call'
+activerecord (5.2.3) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.3) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Error occurred while parsing request parameters.
+Contents:
+
+{
+	    "date": 06052019,
+        "text": "this is text",
+        "image": "this is image",
+        "title": "this is title",
+        "author": "this is author"
+}
+
+
+
+Started GET "/forms/" for ::1 at 2019-06-08 02:57:21 -0700
+Error occurred while parsing request parameters.
+Contents:
+
+{
+	    "date": 06052019,
+        "text": "this is text",
+        "image": "this is image",
+        "title": "this is title",
+        "author": "this is author"
+}
+
+
+
+  
+ActionDispatch::Http::Parameters::ParseError (767: unexpected token at '{
+	    "date": 06052019,
+        "text": "this is text",
+        "image": "this is image",
+        "title": "this is title",
+        "author": "this is author"
+}
+
+
+'):
+  
+actionpack (5.2.3) lib/action_dispatch/http/parameters.rb:117:in `rescue in parse_formatted_parameters'
+actionpack (5.2.3) lib/action_dispatch/http/parameters.rb:111:in `parse_formatted_parameters'
+actionpack (5.2.3) lib/action_dispatch/http/request.rb:381:in `block in POST'
+rack (2.0.7) lib/rack/request.rb:59:in `fetch'
+rack (2.0.7) lib/rack/request.rb:59:in `fetch_header'
+actionpack (5.2.3) lib/action_dispatch/http/request.rb:380:in `POST'
+actionpack (5.2.3) lib/action_dispatch/http/parameters.rb:55:in `parameters'
+actionpack (5.2.3) lib/action_controller/metal/params_wrapper.rb:290:in `_wrapper_enabled?'
+actionpack (5.2.3) lib/action_controller/metal/params_wrapper.rb:244:in `process_action'
+activerecord (5.2.3) lib/active_record/railties/controller_runtime.rb:24:in `process_action'
+actionpack (5.2.3) lib/abstract_controller/base.rb:134:in `process'
+actionpack (5.2.3) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.3) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.0.7) lib/rack/etag.rb:25:in `call'
+rack (2.0.7) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.7) lib/rack/head.rb:12:in `call'
+activerecord (5.2.3) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.3) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/forms/" for ::1 at 2019-06-08 02:57:27 -0700
+Error occurred while parsing request parameters.
+Contents:
+
+{
+	    "date": 06052019,
+        "text": "this is text",
+        "image": "this is image",
+        "title": "this is title",
+        "author": "this is author"
+}
+
+
+
+  
+ActionDispatch::Http::Parameters::ParseError (767: unexpected token at '{
+	    "date": 06052019,
+        "text": "this is text",
+        "image": "this is image",
+        "title": "this is title",
+        "author": "this is author"
+}
+
+
+'):
+  
+actionpack (5.2.3) lib/action_dispatch/http/parameters.rb:117:in `rescue in parse_formatted_parameters'
+actionpack (5.2.3) lib/action_dispatch/http/parameters.rb:111:in `parse_formatted_parameters'
+actionpack (5.2.3) lib/action_dispatch/http/request.rb:381:in `block in POST'
+rack (2.0.7) lib/rack/request.rb:59:in `fetch'
+rack (2.0.7) lib/rack/request.rb:59:in `fetch_header'
+actionpack (5.2.3) lib/action_dispatch/http/request.rb:380:in `POST'
+actionpack (5.2.3) lib/action_dispatch/http/parameters.rb:55:in `parameters'
+actionpack (5.2.3) lib/action_controller/metal/params_wrapper.rb:290:in `_wrapper_enabled?'
+actionpack (5.2.3) lib/action_controller/metal/params_wrapper.rb:244:in `process_action'
+activerecord (5.2.3) lib/active_record/railties/controller_runtime.rb:24:in `process_action'
+actionpack (5.2.3) lib/abstract_controller/base.rb:134:in `process'
+actionpack (5.2.3) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.3) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.0.7) lib/rack/etag.rb:25:in `call'
+rack (2.0.7) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.7) lib/rack/head.rb:12:in `call'
+activerecord (5.2.3) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.3) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/form" for ::1 at 2019-06-08 02:58:32 -0700
+Processing by FormController#index as HTML
+Completed 200 OK in 10ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/form" for ::1 at 2019-06-08 02:58:35 -0700
+Processing by FormController#index as HTML
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/form/" for ::1 at 2019-06-08 02:58:44 -0700
+Error occurred while parsing request parameters.
+Contents:
+
+{
+	    "date": 06052019,
+        "text": "this is text",
+        "image": "this is image",
+        "title": "this is title",
+        "author": "this is author"
+}
+
+
+
+  
+ActionDispatch::Http::Parameters::ParseError (767: unexpected token at '{
+	    "date": 06052019,
+        "text": "this is text",
+        "image": "this is image",
+        "title": "this is title",
+        "author": "this is author"
+}
+
+
+'):
+  
+actionpack (5.2.3) lib/action_dispatch/http/parameters.rb:117:in `rescue in parse_formatted_parameters'
+actionpack (5.2.3) lib/action_dispatch/http/parameters.rb:111:in `parse_formatted_parameters'
+actionpack (5.2.3) lib/action_dispatch/http/request.rb:381:in `block in POST'
+rack (2.0.7) lib/rack/request.rb:59:in `fetch'
+rack (2.0.7) lib/rack/request.rb:59:in `fetch_header'
+actionpack (5.2.3) lib/action_dispatch/http/request.rb:380:in `POST'
+actionpack (5.2.3) lib/action_dispatch/http/parameters.rb:55:in `parameters'
+actionpack (5.2.3) lib/action_controller/metal/params_wrapper.rb:290:in `_wrapper_enabled?'
+actionpack (5.2.3) lib/action_controller/metal/params_wrapper.rb:244:in `process_action'
+activerecord (5.2.3) lib/active_record/railties/controller_runtime.rb:24:in `process_action'
+actionpack (5.2.3) lib/abstract_controller/base.rb:134:in `process'
+actionpack (5.2.3) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.3) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.0.7) lib/rack/etag.rb:25:in `call'
+rack (2.0.7) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.7) lib/rack/head.rb:12:in `call'
+activerecord (5.2.3) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.3) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started POST "/form/" for ::1 at 2019-06-08 02:58:58 -0700
+Error occurred while parsing request parameters.
+Contents:
+
+{
+	    "date": 06052019,
+        "text": "this is text",
+        "image": "this is image",
+        "title": "this is title",
+        "author": "this is author"
+}
+
+
+
+  
+ActionDispatch::Http::Parameters::ParseError (767: unexpected token at '{
+	    "date": 06052019,
+        "text": "this is text",
+        "image": "this is image",
+        "title": "this is title",
+        "author": "this is author"
+}
+
+
+'):
+  
+actionpack (5.2.3) lib/action_dispatch/http/parameters.rb:117:in `rescue in parse_formatted_parameters'
+actionpack (5.2.3) lib/action_dispatch/http/parameters.rb:111:in `parse_formatted_parameters'
+actionpack (5.2.3) lib/action_dispatch/http/request.rb:381:in `block in POST'
+rack (2.0.7) lib/rack/request.rb:59:in `fetch'
+rack (2.0.7) lib/rack/request.rb:59:in `fetch_header'
+actionpack (5.2.3) lib/action_dispatch/http/request.rb:380:in `POST'
+actionpack (5.2.3) lib/action_dispatch/http/parameters.rb:55:in `parameters'
+actionpack (5.2.3) lib/action_controller/metal/params_wrapper.rb:290:in `_wrapper_enabled?'
+actionpack (5.2.3) lib/action_controller/metal/params_wrapper.rb:244:in `process_action'
+activerecord (5.2.3) lib/active_record/railties/controller_runtime.rb:24:in `process_action'
+actionpack (5.2.3) lib/abstract_controller/base.rb:134:in `process'
+actionpack (5.2.3) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.3) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.0.7) lib/rack/etag.rb:25:in `call'
+rack (2.0.7) lib/rack/conditional_get.rb:38:in `call'
+rack (2.0.7) lib/rack/head.rb:12:in `call'
+activerecord (5.2.3) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.3) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started POST "/form/" for ::1 at 2019-06-08 02:59:52 -0700
+Processing by FormController#create as */*
+  Parameters: {"date"=>"06052019", "text"=>"this is text", "image"=>"this is image", "title"=>"this is title", "author"=>"this is author", "form"=>{"date"=>"06052019", "text"=>"this is text", "image"=>"this is image", "title"=>"this is title", "author"=>"this is author"}}
+Completed 200 OK in 1246ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/form" for ::1 at 2019-06-08 03:00:02 -0700
+Processing by FormController#index as HTML
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started DELETE "/form/1" for ::1 at 2019-06-08 03:00:21 -0700
+Processing by FormController#delete as */*
+  Parameters: {"date"=>"06052019", "text"=>"this is text", "image"=>"this is image", "title"=>"this is title", "author"=>"this is author", "id"=>"1", "form"=>{"date"=>"06052019", "text"=>"this is text", "image"=>"this is image", "title"=>"this is title", "author"=>"this is author"}}
+Completed 200 OK in 37ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/form/" for ::1 at 2019-06-08 03:00:32 -0700
+Processing by FormController#create as */*
+  Parameters: {"date"=>"06052019", "text"=>"this is text", "image"=>"this is image", "title"=>"this is title", "author"=>"this is author", "form"=>{"date"=>"06052019", "text"=>"this is text", "image"=>"this is image", "title"=>"this is title", "author"=>"this is author"}}
+Completed 200 OK in 34ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started PUT "/form/2" for ::1 at 2019-06-08 03:00:48 -0700
+Processing by FormController#update as */*
+  Parameters: {"date"=>"06052019", "text"=>"this is text", "image"=>"this is image yoo", "title"=>"this is title", "author"=>"this is author", "id"=>"2", "form"=>{"date"=>"06052019", "text"=>"this is text", "image"=>"this is image yoo", "title"=>"this is title", "author"=>"this is author"}}
+Completed 500 Internal Server Error in 43ms (ActiveRecord: 0.0ms)
+
+
+  
+PG::SyntaxError (ERROR:  syntax error at or near "text"
+LINE 2:         SET date=06052019 text='this is text', image='this i...
+                                  ^
+):
+  
+app/models/form.rb:62:in `async_exec'
+app/models/form.rb:62:in `update'
+app/controllers/form_controller.rb:24:in `update'
+Started PUT "/form/1" for ::1 at 2019-06-08 03:01:07 -0700
+Processing by FormController#update as */*
+  Parameters: {"date"=>"06052019", "text"=>"this is text", "image"=>"this is image yoo", "title"=>"this is title", "author"=>"this is author", "id"=>"1", "form"=>{"date"=>"06052019", "text"=>"this is text", "image"=>"this is image yoo", "title"=>"this is title", "author"=>"this is author"}}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+PG::SyntaxError (ERROR:  syntax error at or near "text"
+LINE 2:         SET date=06052019 text='this is text', image='this i...
+                                  ^
+):
+  
+app/models/form.rb:62:in `async_exec'
+app/models/form.rb:62:in `update'
+app/controllers/form_controller.rb:24:in `update'
+Started PUT "/form/2" for ::1 at 2019-06-08 03:01:17 -0700
+Processing by FormController#update as */*
+  Parameters: {"date"=>"06052019", "text"=>"this is text", "image"=>"this is image yoo", "title"=>"this is title", "author"=>"this is author", "id"=>"2", "form"=>{"date"=>"06052019", "text"=>"this is text", "image"=>"this is image yoo", "title"=>"this is title", "author"=>"this is author"}}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+PG::SyntaxError (ERROR:  syntax error at or near "text"
+LINE 2:         SET date=06052019 text='this is text', image='this i...
+                                  ^
+):
+  
+app/models/form.rb:62:in `async_exec'
+app/models/form.rb:62:in `update'
+app/controllers/form_controller.rb:24:in `update'
+Started GET "/form" for ::1 at 2019-06-08 03:02:54 -0700
+Processing by FormController#index as HTML
+Completed 200 OK in 2ms (Views: 0.4ms | ActiveRecord: 0.0ms)
+
+
+Started PUT "/form/2" for ::1 at 2019-06-08 03:04:09 -0700
+Processing by FormController#update as */*
+  Parameters: {"date"=>"06052019", "text"=>"this is text", "image"=>"this is image", "title"=>"this is title", "author"=>"this is author", "id"=>"2", "form"=>{"date"=>"06052019", "text"=>"this is text", "image"=>"this is image", "title"=>"this is title", "author"=>"this is author"}}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+PG::SyntaxError (ERROR:  syntax error at or near "text"
+LINE 2:         SET date=06052019 text='this is text', image='this i...
+                                  ^
+):
+  
+app/models/form.rb:62:in `async_exec'
+app/models/form.rb:62:in `update'
+app/controllers/form_controller.rb:24:in `update'
+Started PUT "/form/2" for ::1 at 2019-06-08 03:04:19 -0700
+Error occurred while parsing request parameters.
+Contents:
+
+{
+	    "date": 06052019,
+        "text": "this is text",
+        "image": "this is image yo",
+        "title": "this is title",
+        "author": "this is author"
+}
+
+
+
+  
+ActionDispatch::Http::Parameters::ParseError (767: unexpected token at '{
+	    "date": 06052019,
+        "text": "this is text",
+        "image": "this is image yo",
+        "title": "this is title",
+        "author": "this is author"
+}
+
+
+'):
+  
+actionpack (5.2.3) lib/action_dispatch/http/parameters.rb:117:in `rescue in parse_formatted_parameters'
+actionpack (5.2.3) lib/action_dispatch/http/parameters.rb:111:in `parse_formatted_parameters'
+actionpack (5.2.3) lib/action_dispatch/http/request.rb:381:in `block in POST'
+rack (2.0.7) lib/rack/request.rb:59:in `fetch'
+rack (2.0.7) lib/rack/request.rb:59:in `fetch_header'
+actionpack (5.2.3) lib/action_dispatch/http/request.rb:380:in `POST'
+actionpack (5.2.3) lib/action_dispatch/http/parameters.rb:55:in `parameters'
+actionpack (5.2.3) lib/action_controller/metal/params_wrapper.rb:290:in `_wrapper_enabled?'
+actionpack (5.2.3) lib/action_controller/metal/params_wrapper.rb:244:in `process_action'
+activerecord (5.2.3) lib/active_record/railties/controller_runtime.rb:24:in `process_action'
+actionpack (5.2.3) lib/abstract_controller/base.rb:134:in `process'
+actionpack (5.2.3) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.3) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.0.7) lib/rack/etag.rb:25:in `call'
+rack (2.0.7) lib/rack/conditional_get.rb:38:in `call'
+rack (2.0.7) lib/rack/head.rb:12:in `call'
+activerecord (5.2.3) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.3) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started PUT "/form/2" for ::1 at 2019-06-08 03:04:28 -0700
+Error occurred while parsing request parameters.
+Contents:
+
+{
+	    "date": '06052019',
+        "text": "this is text",
+        "image": "this is image yo",
+        "title": "this is title",
+        "author": "this is author"
+}
+
+
+
+  
+ActionDispatch::Http::Parameters::ParseError (767: unexpected token at '{
+	    "date": '06052019',
+        "text": "this is text",
+        "image": "this is image yo",
+        "title": "this is title",
+        "author": "this is author"
+}
+
+
+'):
+  
+actionpack (5.2.3) lib/action_dispatch/http/parameters.rb:117:in `rescue in parse_formatted_parameters'
+actionpack (5.2.3) lib/action_dispatch/http/parameters.rb:111:in `parse_formatted_parameters'
+actionpack (5.2.3) lib/action_dispatch/http/request.rb:381:in `block in POST'
+rack (2.0.7) lib/rack/request.rb:59:in `fetch'
+rack (2.0.7) lib/rack/request.rb:59:in `fetch_header'
+actionpack (5.2.3) lib/action_dispatch/http/request.rb:380:in `POST'
+actionpack (5.2.3) lib/action_dispatch/http/parameters.rb:55:in `parameters'
+actionpack (5.2.3) lib/action_controller/metal/params_wrapper.rb:290:in `_wrapper_enabled?'
+actionpack (5.2.3) lib/action_controller/metal/params_wrapper.rb:244:in `process_action'
+activerecord (5.2.3) lib/active_record/railties/controller_runtime.rb:24:in `process_action'
+actionpack (5.2.3) lib/abstract_controller/base.rb:134:in `process'
+actionpack (5.2.3) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.3) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.0.7) lib/rack/etag.rb:25:in `call'
+rack (2.0.7) lib/rack/conditional_get.rb:38:in `call'
+rack (2.0.7) lib/rack/head.rb:12:in `call'
+activerecord (5.2.3) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.3) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started PUT "/form/" for ::1 at 2019-06-08 03:05:00 -0700
+  
+ActionController::RoutingError (No route matches [PUT] "/form"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Error occurred while parsing request parameters.
+Contents:
+
+{
+	    "date": '06052019',
+        "text": "this is text",
+        "image": "this is image yo",
+        "title": "this is title",
+        "author": "this is author"
+}
+
+
+
+Started PUT "/form/" for ::1 at 2019-06-08 03:05:20 -0700
+  
+ActionController::RoutingError (No route matches [PUT] "/form"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Error occurred while parsing request parameters.
+Contents:
+
+{
+	    "date": 06052019,
+        "text": "this is text",
+        "image": "this is image yo",
+        "title": "this is title",
+        "author": "this is author"
+}
+
+
+
+Started GET "/form/2" for ::1 at 2019-06-08 04:42:41 -0700
+Processing by FormController#show as HTML
+  Parameters: {"id"=>"2"}
+Completed 200 OK in 9ms (Views: 0.8ms | ActiveRecord: 0.0ms)
+
+
