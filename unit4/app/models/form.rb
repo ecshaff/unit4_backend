@@ -44,7 +44,7 @@ class Form
       SQL
     )
     return {
-      "id" => results.first["id"],
+      "id" => results.first["id"].to_i,
       "date" => results.first["date"],
       "text" => results.first["text"],
       "image" => results.first["image"],
