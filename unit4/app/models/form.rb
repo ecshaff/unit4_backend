@@ -8,7 +8,7 @@ class Form
     return results.map do |result|
       {
         "id" => result["id"].to_i,
-        "date" => result["date"].to_i,
+        "date" => result["date"],
         "text" => result["text"],
         "image" => result["image"],
         "title" => result["title"],
@@ -23,7 +23,7 @@ class Form
     return {
      
         "id" => results.first["id"].to_i,
-        "date" => results.first["date"].to_i,
+        "date" => results.first["date"],
         "text" => results.first["text"],
         "image" => results.first["image"],
         "title" => results.first["title"],
@@ -37,13 +37,13 @@ class Form
     results = DB.exec(
       <<-SQL
         INSERT INTO form (date, text, image, title, author)
-        VALUES ( #{opts["date"]}, '#{opts["text"]}', '#{opts["image"]}', '#{opts["title"]}', '#{opts["author"]}' )
+        VALUES ( '#{opts["date"]}', '#{opts["text"]}', '#{opts["image"]}', '#{opts["title"]}', '#{opts["author"]}' )
         RETURNING id, date, text, image, title, author;
       SQL
     )
     return {
       "id" => results.first["id"].to_i,
-      "date" => results.first["date"].to_i,
+      "date" => results.first["date"],
       "text" => results.first["text"],
       "image" => results.first["image"],
       "title" => results.first["title"],
@@ -62,14 +62,14 @@ class Form
     results = DB.exec(
       <<-SQL
         UPDATE form
-        SET date=#{opts["date"]} text='#{opts["text"]}', image='#{opts["image"]}', title='#{opts["title"]}', author='#{opts["author"]}'
+        SET date='#{opts["date"]}', text='#{opts["text"]}', image='#{opts["image"]}', title='#{opts["title"]}', author='#{opts["author"]}'
         WHERE id=#{id}
         RETURNING id, date, text, image, title, author;
       SQL
     )
     return {
       "id" => results.first["id"].to_i,
-      "date" => results.first["date"].to_i,
+      "date" => results.first["date"],
       "text" => results.first["text"],
       "image" => results.first["image"],
       "title" => results.first["title"],

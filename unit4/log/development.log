@@ -918,3 +918,51 @@ Processing by FormController#show as HTML
 Completed 200 OK in 9ms (Views: 0.8ms | ActiveRecord: 0.0ms)
 
 
+Started POST "/form/" for ::1 at 2019-06-08 10:07:35 -0700
+Processing by FormController#create as */*
+  Parameters: {"date"=>"June 8th 2019", "text"=>"this is text", "image"=>"this is image yo", "title"=>"this is title", "author"=>"this is author", "form"=>{"date"=>"June 8th 2019", "text"=>"this is text", "image"=>"this is image yo", "title"=>"this is title", "author"=>"this is author"}}
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms)
+
+
+  
+PG::InvalidTextRepresentation (ERROR:  invalid input syntax for integer: "June 8th 2019"
+LINE 2:         VALUES ( 'June 8th 2019', 'this is text', 'this is i...
+                         ^
+):
+  
+app/models/form.rb:37:in `async_exec'
+app/models/form.rb:37:in `create'
+app/controllers/form_controller.rb:14:in `create'
+Started POST "/form/" for ::1 at 2019-06-08 10:10:13 -0700
+Processing by FormController#create as */*
+  Parameters: {"date"=>"June 8th 2019", "text"=>"this is text", "image"=>"this is image yo", "title"=>"this is title", "author"=>"this is author", "form"=>{"date"=>"June 8th 2019", "text"=>"this is text", "image"=>"this is image yo", "title"=>"this is title", "author"=>"this is author"}}
+Completed 200 OK in 6ms (Views: 0.8ms | ActiveRecord: 0.0ms)
+
+
+Started PUT "/form/3" for ::1 at 2019-06-08 10:10:35 -0700
+Processing by FormController#update as */*
+  Parameters: {"date"=>"June 8th 2019", "text"=>"this is text", "image"=>"this is image yo", "title"=>"this is title", "author"=>"this is auth", "id"=>"3", "form"=>{"date"=>"June 8th 2019", "text"=>"this is text", "image"=>"this is image yo", "title"=>"this is title", "author"=>"this is auth"}}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+PG::SyntaxError (ERROR:  syntax error at or near "text"
+LINE 2:         SET date='June 8th 2019' text='this is text', image=...
+                                         ^
+):
+  
+app/models/form.rb:62:in `async_exec'
+app/models/form.rb:62:in `update'
+app/controllers/form_controller.rb:24:in `update'
+Started PUT "/form/3" for ::1 at 2019-06-08 10:11:13 -0700
+Processing by FormController#update as */*
+  Parameters: {"date"=>"June 8th 2019", "text"=>"this is text", "image"=>"this is image yo", "title"=>"this is title", "author"=>"this is auth", "id"=>"3", "form"=>{"date"=>"June 8th 2019", "text"=>"this is text", "image"=>"this is image yo", "title"=>"this is title", "author"=>"this is auth"}}
+Completed 200 OK in 25ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started DELETE "/form/3" for ::1 at 2019-06-08 10:11:58 -0700
+Processing by FormController#delete as */*
+  Parameters: {"date"=>"June 8th 2019", "text"=>"this is text", "image"=>"this is image yo", "title"=>"this is title", "author"=>"this is auth", "id"=>"3", "form"=>{"date"=>"June 8th 2019", "text"=>"this is text", "image"=>"this is image yo", "title"=>"this is title", "author"=>"this is auth"}}
+Completed 200 OK in 11ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
