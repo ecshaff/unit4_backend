@@ -12,7 +12,8 @@ class Form
         "text" => result["text"],
         "image" => result["image"],
         "title" => result["title"],
-        "author" => result["author"]
+        "author" => result["author"],
+        "status" => result["status"]
         }
     end
   end
@@ -27,7 +28,8 @@ class Form
         "text" => results.first["text"],
         "image" => results.first["image"],
         "title" => results.first["title"],
-        "author" => results.first["author"]
+        "author" => results.first["author"],
+        "status" => results.first["status"]
       
     }
   end
@@ -36,9 +38,9 @@ class Form
   def self.create(opts)
     results = DB.exec(
       <<-SQL
-        INSERT INTO form (date, text, image, title, author)
-        VALUES ( '#{opts["date"]}', '#{opts["text"]}', '#{opts["image"]}', '#{opts["title"]}', '#{opts["author"]}' )
-        RETURNING id, date, text, image, title, author;
+        INSERT INTO form (date, text, image, title, author, status)
+        VALUES ( '#{opts["date"]}', '#{opts["text"]}', '#{opts["image"]}', '#{opts["title"]}', '#{opts["author"]}', '#{opts["status"]}' )
+        RETURNING id, date, text, image, title, author, status;
       SQL
     )
     return {
@@ -47,7 +49,8 @@ class Form
       "text" => results.first["text"],
       "image" => results.first["image"],
       "title" => results.first["title"],
-      "author" => results.first["author"]
+      "author" => results.first["author"],
+      "status" => results.first["status"]
     }
   end
 
@@ -62,9 +65,9 @@ class Form
     results = DB.exec(
       <<-SQL
         UPDATE form
-        SET date='#{opts["date"]}', text='#{opts["text"]}', image='#{opts["image"]}', title='#{opts["title"]}', author='#{opts["author"]}'
+        SET date='#{opts["date"]}', text='#{opts["text"]}', image='#{opts["image"]}', title='#{opts["title"]}', author='#{opts["author"]}', status='#{opts["status"]}'
         WHERE id=#{id}
-        RETURNING id, date, text, image, title, author;
+        RETURNING id, date, text, image, title, author, status;
       SQL
     )
     return {
@@ -73,7 +76,8 @@ class Form
       "text" => results.first["text"],
       "image" => results.first["image"],
       "title" => results.first["title"],
-      "author" => results.first["author"]
+      "author" => results.first["author"],
+      "status" => results.first["status"]
     }
   end
 
